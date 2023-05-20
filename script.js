@@ -35,18 +35,44 @@ $(document).ready(function(){
 
     // typing text animation script
     var typed = new Typed(".typing", {
-        strings: ["Programmer", "Software Developer", "Explorer"],
+        strings: ["Competitive Programmer", "React Developer", "Problem Solver"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
 
     var typed = new Typed(".typing-2", {
-        strings: ["Programmer", "Software Developer", "Explorer"],
+        strings: ["Competitive Programmer", "React Developer", "Problem Solver"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
+
+    // Get all project items
+const projectItems = document.querySelectorAll('.project-item');
+
+// Loop through each project item
+projectItems.forEach((item) => {
+  // Get project info and image elements
+  const projectInfo = item.querySelector('.project-info');
+  const projectImg = item.querySelector('img');
+
+  // Set the height of project info to be equal to the height of the image
+  projectInfo.style.height = `${projectImg.clientHeight}px`;
+
+  // Add event listener for image load
+  projectImg.addEventListener('load', () => {
+    // Set the height of project info to be equal to the height of the image
+    projectInfo.style.height = `${projectImg.clientHeight}px`;
+  });
+
+  // Add event listener for window resize
+  window.addEventListener('resize', () => {
+    // Set the height of project info to be equal to the height of the image
+    projectInfo.style.height = `${projectImg.clientHeight}px`;
+  });
+});
+
 
     // owl carousel script
     $('.carousel').owlCarousel({

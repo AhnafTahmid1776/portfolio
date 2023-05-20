@@ -221,7 +221,7 @@ section .title::after{
 
 /* about section styling */
 .about .title::after{
-    content: "who i am";
+    content: "What I do";
 }
 .about .about-content .left{
     width: 45%;
@@ -542,6 +542,74 @@ section .title::after{
   color: crimson;
   background: none;
 }
+
+/* projects section styling */
+.latest-projects .project-info a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  .latest-projects .project-info a:hover {
+    background-color: #333333;
+  }
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .project-item {
+    flex-basis: calc(50% - 20px);
+    margin: 20px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: 767px) {
+    .project-item {
+      flex-basis: calc(100% - 20px);
+      margin: 20px 0;
+    }
+  }
+  
+  /* For 3 row * 2 column layout */
+  @media (min-width: 768px) {
+    .projects-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+  
+    .project-item {
+      flex-basis: calc(50% - 20px);
+      margin: 20px 0;
+    }
+  
+    /* Set width and margin for the first item in each row */
+    .project-item:nth-child(2n-1) {
+      width: calc(100% - 40px);
+      margin-right: 20px;
+    }
+  
+    /* Set width and margin for the second item in each row */
+    .project-item:nth-child(2n) {
+      width: calc(50% - 20px);
+      margin-right: 0;
+    }
+  
+    /* Set margin for the last item in each row */
+    .project-item:nth-child(2n-1):last-of-type,
+    .project-item:nth-child(2n):last-of-type {
+      margin-right: 0;
+    }
+  }
+  
 /* footer section styling */
 footer{
     background: #111;
